@@ -8,6 +8,13 @@ functions:
     handler: ./info
     image: alexellis2/faas-arm64-info
 
+  env:
+     skip_build: true
+     fprocess: env
+     image: functions/alpine:latest-arm64
+     environment:
+       user_name: packet
+
   sha512sum:
      skip_build: true
      fprocess: sha512sum
