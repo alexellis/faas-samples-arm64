@@ -1,0 +1,15 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+
+functions:
+  info:
+    lang: node
+    handler: ./info
+    image: alexellis2/faas-arm64-info
+
+  sha512sum:
+     skip_build: true
+     fprocess: sha512sum
+     image: functions/alpine:latest-arm64
+
